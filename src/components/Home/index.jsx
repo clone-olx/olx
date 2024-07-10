@@ -4,11 +4,11 @@ import Categories from "../Categories";
 import AdvertiseBanner from "../AdvertiseBanner";
 import AllCategories from "../AllCategories";
 import ItemsCard from "../ItemsCard";
-
+import { Route, Routes } from "react-router-dom";
+import Login from "../Authentication/Login";
 export default function Home() {
   return (
     <>
-      <div>
         <Navbar />
         <Categories />
         <AdvertiseBanner />
@@ -20,7 +20,10 @@ export default function Home() {
         <ItemsCard title="Mens Watches" apiCategory={"mens-watches"} />
         <ItemsCard title="Laptops" apiCategory={"laptops"} />
         <ItemsCard title="Mens Watches" apiCategory={"mens-watches"} />
-      </div>
+    <Routes>
+        
+  <Route path="/login" element={<Login/>} />
+  </Routes>
     </>
   );
 }

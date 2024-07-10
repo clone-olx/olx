@@ -12,6 +12,7 @@ import propertyIcon from "/assets/icons/property-icon.png";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
@@ -88,7 +89,7 @@ export default function Navbar() {
                 </div>
               </div>
               <div>
-                <h2 className="underline font-bold cursor-pointer">Login</h2>
+                <Link to="/login" className="underline font-bold cursor-pointer" >Login</Link>
               </div>
 
               <div className="relative">
