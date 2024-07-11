@@ -44,10 +44,11 @@ export default function Categories() {
       </Menu>
       <div className="flex gap-4 items-center cursor-pointer">
         {categories.map((item) => (
-          <h2 className="hover:text-[#69c3ce]">{item.title}</h2>
+          <h2 key={item.id} className="hover:text-[#69c3ce]">
+            {item.title}
+          </h2>
         ))}
       </div>
-
     </div>
   );
 }

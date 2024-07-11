@@ -8,10 +8,13 @@ export default function AllCategories() {
         <h1 className="font-bold pt-4 pb-4 text-2xl">All categories</h1>
         <div
           className="flex md:grid md:grid-cols-9 overflow-x-auto md:overflow-visible space-x-4 md:space-x-0 gap-6 items-start"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {allCategoriesWithImages.map((item, index) => (
-            <div key={index} className="flex-shrink-0 md:flex-shrink flex flex-col items-center">
+            <div
+              key={index}
+              className="flex-shrink-0 md:flex-shrink flex flex-col items-center"
+            >
               <div className="w-24">
                 <img src={item.icon} className="w-full" alt={item.title} />
               </div>

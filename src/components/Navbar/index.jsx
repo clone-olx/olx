@@ -25,7 +25,10 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className=" sticky top-0 bg-white z-10 border border-b pb-0 md:pb-5">
+    <Disclosure
+      as="nav"
+      className=" sticky top-0 bg-white z-10 border border-b pb-0 md:pb-5"
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -89,7 +92,12 @@ export default function Navbar() {
                 </div>
               </div>
               <div>
-                <Link to="/login" className="underline font-bold cursor-pointer" >Login ijkjkj</Link>
+                <Link
+                  to="/login"
+                  className="underline font-bold cursor-pointer"
+                >
+                  Login
+                </Link>
               </div>
 
               <div className="relative">
