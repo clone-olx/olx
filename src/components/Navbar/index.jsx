@@ -89,7 +89,7 @@ export default function Navbar() {
                 </div>
               </div>
               <div>
-                <Link to="/login" className="underline font-bold cursor-pointer" >Login</Link>
+                <Link to="/login" className="underline font-bold cursor-pointer" >Login ijkjkj</Link>
               </div>
 
               <div className="relative">
