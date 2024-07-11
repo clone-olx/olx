@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaRegHeart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function ItemsCard(props) {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchApi();
@@ -17,7 +19,7 @@ function ItemsCard(props) {
       .catch((err) => console.log(err));
   };
 
-  const getRandomDays = (createdAt) => {
+  const getRandomDays = () => {
     const randomDays = Math.floor(Math.random() * 30 + 1);
     return `${randomDays} days ago`;
   };
@@ -30,8 +32,9 @@ function ItemsCard(props) {
           {data.map((item, index) => (
             <div
               key={index}
-              className="flex-none w-72 rounded border border-[#d8dfe0] bg-white"
+              className="flex-none w-72 rounded border border-[#d8dfe0] bg-white cursor-pointer"
               style={{ minWidth: "280px" }} // Adjust as needed for mobile view
+              onClick={() => navigate(`/product/${item.id}`)}
             >
               <img
                 className="w-full h-48 object-cover"
@@ -50,7 +53,7 @@ function ItemsCard(props) {
               <div className="px-4 pt-4 pb-2">
                 <p className="text-gray-700 text-base">{item.returnPolicy}</p>
                 <p className="text-gray-700 text-base">
-                  {getRandomDays(item.meta.createdAt)}
+                  {getRandomDays()}
                 </p>
               </div>
             </div>

@@ -4,8 +4,6 @@ import Categories from "../Categories";
 import AdvertiseBanner from "../AdvertiseBanner";
 import AllCategories from "../AllCategories";
 import ItemsCard from "../ItemsCard";
-import { Route, Routes } from "react-router-dom";
-import Login from "../Authentication/Login";
 import Footer from "../Footer";
 import ScrollToTop from "react-scroll-to-top";
 
@@ -24,9 +22,6 @@ export default function Home() {
       <ItemsCard title="Laptops" apiCategory={"laptops"} />
       <ItemsCard title="Mens Watches" apiCategory={"mens-watches"} />
       <Footer />
-      <Routes>
-        <Route path="/login" element={<Login />} />
-      </Routes>
       <div>
         <ScrollToTop
           smooth

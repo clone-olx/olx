@@ -15,8 +15,8 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
+  { name: "Dashboard", to: "/", current: true },
+  { name: "Team", to: "/team", current: false },
 ];
 
 function classNames(...classes) {
@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className=" sticky top-0 bg-white z-10 border border-b pb-0 md:pb-5"
+      className="sticky top-0 bg-white z-10 border border-b pb-0 md:pb-5"
     >
       {({ open }) => (
         <>
@@ -47,11 +47,13 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center gap-9 sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img className="h-8 w-auto" src={icon} alt="Your Company" />
+                  <Link to="/">
+                    <img className="h-8 w-auto" src={icon} alt="Your Company" />
+                  </Link>
                 </div>
 
                 <div className="flex gap-2 justify-center items-center text-center hover:text-blue-400">
-                  <div className="w-9 h-9 border border-black  rounded-full flex justify-center items-center">
+                  <div className="w-9 h-9 border border-black rounded-full flex justify-center items-center">
                     <img src={carIcon} width="25px" />
                   </div>
                   <div>
@@ -69,7 +71,7 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
-            <div className="hidden md:flex flex-row items-center gap-4  ">
+            <div className="hidden md:flex flex-row items-center gap-4">
               <div className="relative w-72">
                 <HiOutlineLocationMarker className="h-6 w-6 absolute top-1/2 left-2 transform -translate-y-1/2 pointer-events-none" />
                 <select className="border border-[#d8dfe0] w-full h-12 pl-10 pr-10 outline-none appearance-none rounded">
@@ -108,14 +110,12 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-
           <DisclosurePanel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
-                <DisclosureButton
+                <Link
                   key={item.name}
-                  as="a"
-                  href={item.href}
+                  to={item.to}
                   className={classNames(
                     item.current
                       ? "bg-gray-900 text-white"
@@ -125,7 +125,7 @@ export default function Navbar() {
                   aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
-                </DisclosureButton>
+                </Link>
               ))}
             </div>
           </DisclosurePanel>
