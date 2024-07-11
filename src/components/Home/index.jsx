@@ -24,17 +24,8 @@ export default function Home() {
       <Footer />
       <div>
         <ScrollToTop
+        className="h-5 bg-white border-2 rounded-3xl flex pt-2 justify-center mr-6 "
           smooth
-          height="20"
-          style={{
-            backgroundColor: "white",
-            border: "2px solid skyBlue",
-            borderRadius: "25px",
-            display: "flex",
-            paddingTop: "8px",
-            justifyContent: "center",
-            marginRight: "-26px",
-          }}
         />
       </div>
     </>
