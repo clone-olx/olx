@@ -42,7 +42,7 @@ function ItemsCard(props) {
                 alt=""
               />
               <div className="px-4 py-2 flex items-center justify-between">
-                <div className="font-medium text-xl mb-2">{`$ ${item.price}`}</div>
+                <div className="font-bold text-xl mb-2">{`$ ${item.price}`}</div>
                 <div>
                   <FaRegHeart className="w-full h-5" />
                 </div>
@@ -52,9 +52,7 @@ function ItemsCard(props) {
               </div>
               <div className="px-4 pt-4 pb-2">
                 <p className="text-gray-700 text-base">{item.returnPolicy}</p>
-                <p className="text-gray-700 text-base">
-                  {getRandomDays()}
-                </p>
+                <p className="text-gray-700 text-base">{getRandomDays()}</p>
               </div>
             </div>
           ))}

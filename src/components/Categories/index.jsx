@@ -5,32 +5,29 @@ import { categories, dropdowncategories } from "../../categories";
 
 export default function Categories() {
   return (
-    <div className="hidden pt-3 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 md:flex ">
-      <Menu as="div" className="relative inline-block ">
+    <div className="hidden pt-3 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 md:flex z-20 ">
+      <Menu as="div" className="relative inline-block">
         <div>
-          <MenuButton className="inline-flex w-full justify-center gap-x-1.5  px-3 py-2 text-sm font-bold ">
+          <MenuButton className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-sm font-bold">
             ALL CATEGORIES
-            <GoChevronDown className="-mr-1 h-5 w-5 " aria-hidden="true" />
+            <GoChevronDown className="-mr-1 h-5 w-5" aria-hidden="true" />
           </MenuButton>
         </div>
         <MenuItems
           transition
-          className="absolute mt-2 w-[800px] p-4 bg-white rounded shadow-lg"
+          className="absolute w-[800px] p-4 bg-white rounded shadow-lg z-30"
         >
           <div className="py-1 flex justify-between text-start">
             {dropdowncategories.map((item) => (
               <MenuItem key={item.id}>
                 {({ active }) => (
                   <div className="text-sm cursor-pointer">
-                    <div className=" hover:text-[#69c3ce] p-3.5 font-semibold">
+                    <div className="hover:text-[#69c3ce] p-3.5 font-semibold">
                       {item.title}
                     </div>
                     <div className="ml-2">
                       {item.nested.map((item, index) => (
-                        <div
-                          key={index}
-                          className=" hover:text-[#69c3ce] p-1.5"
-                        >
+                        <div key={index} className="hover:text-[#69c3ce] p-1.5">
                           {item.title}
                         </div>
                       ))}
